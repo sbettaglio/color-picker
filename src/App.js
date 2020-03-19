@@ -30,20 +30,17 @@ export class App extends Component {
   render() {
     return (
       <>
-        <h1
-          style={{
-            color: `hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%)`,
-          }}
-        >
-          HSL Color Picker
-        </h1>
+        <h1>HSL Color Picker</h1>
         <section className="color-container">
-          <aside
-            className="color-display"
-            style={{
-              backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%)`,
-            }}
-          ></aside>
+          <article>
+            <aside
+              className="color-display"
+              style={{
+                backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%)`,
+              }}
+            ></aside>
+            <h5>{`hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%)`}</h5>
+          </article>
           <form>
             <div>
               <p>Hue</p>
