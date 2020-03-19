@@ -2,10 +2,17 @@ import React, { Component } from 'react'
 
 export class App extends Component {
   state = {
-    h: 180,
-    s: 50,
-    l: 50,
+    h: Math.round(Math.random() * 360),
+    s: Math.round(Math.random() * 100),
+    l: Math.round(Math.random() * 100),
   }
+  // componentDidMount() {
+  //   this.setState({
+  //     h: Math.round(Math.random() * 360),
+  //     s: Math.round(Math.random() * 360),
+  //     l: Math.round(Math.random() * 100),
+  //   })
+  // }
 
   adjustHueSlider = e => {
     console.log(e.target.value)
@@ -50,7 +57,7 @@ export class App extends Component {
                 min="0"
                 max="360"
                 onChange={this.adjustHueSlider}
-                value={this.state.hue}
+                value={this.state.h}
               ></input>
             </div>
             <div>
