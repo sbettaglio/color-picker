@@ -6,13 +6,13 @@ export class App extends Component {
     s: Math.round(Math.random() * 100),
     l: Math.round(Math.random() * 100),
   }
-  // componentDidMount() {
-  //   this.setState({
-  //     h: Math.round(Math.random() * 360),
-  //     s: Math.round(Math.random() * 360),
-  //     l: Math.round(Math.random() * 100),
-  //   })
-  // }
+  randomColor = () => {
+    this.setState({
+      h: Math.round(Math.random() * 360),
+      s: Math.round(Math.random() * 360),
+      l: Math.round(Math.random() * 100),
+    })
+  }
 
   adjustHueSlider = e => {
     console.log(e.target.value)
@@ -83,6 +83,11 @@ export class App extends Component {
               ></input>
             </div>
           </form>
+        </section>
+        <section className="button-section">
+          <button className="random" onClick={this.randomColor}>
+            Random Color
+          </button>
         </section>
       </>
     )

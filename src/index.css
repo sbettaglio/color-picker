@@ -37,3 +37,9 @@ article {
 form .color-box {
   padding: 8rem;
 }
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
