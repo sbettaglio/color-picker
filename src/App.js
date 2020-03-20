@@ -5,12 +5,14 @@ export class App extends Component {
     h: Math.round(Math.random() * 360),
     s: Math.round(Math.random() * 100),
     l: Math.round(Math.random() * 100),
+    a: Math.round(Math.random() * 100),
   }
   randomColor = () => {
     this.setState({
       h: Math.round(Math.random() * 360),
       s: Math.round(Math.random() * 360),
       l: Math.round(Math.random() * 100),
+      a: Math.round(Math.random() * 100),
     })
   }
 
@@ -34,6 +36,12 @@ export class App extends Component {
       l: e.target.value,
     })
   }
+  adjustAlphaSlider = e => {
+    console.log(e.target.value)
+    this.setState({
+      a: e.target.value,
+    })
+  }
   render() {
     return (
       <>
@@ -43,10 +51,10 @@ export class App extends Component {
             <aside
               className="color-display"
               style={{
-                backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%)`,
+                backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%, ${this.state.a}%)`,
               }}
             ></aside>
-            <h5>{`hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%)`}</h5>
+            <h5>{`hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%,${this.state.a}%)`}</h5>
           </article>
           <form>
             <div>
@@ -80,6 +88,17 @@ export class App extends Component {
                 max="100"
                 onChange={this.adjustLightSlider}
                 value={this.state.l}
+              ></input>
+            </div>
+            <div>
+              <p>Alpha</p>
+              <input
+                type="range"
+                className="alpha"
+                min="0"
+                max="100"
+                onChange={this.adjustAlphaSlider}
+                value={this.state.a}
               ></input>
             </div>
           </form>
