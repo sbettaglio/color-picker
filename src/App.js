@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Rick from './images/rick.jpg'
 
 export class App extends Component {
   state = {
@@ -48,12 +49,17 @@ export class App extends Component {
         <h1>HSL Color Picker</h1>
         <section className="color-container">
           <article>
-            <aside
-              className="color-display"
-              style={{
-                backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%, ${this.state.a}%)`,
-              }}
-            ></aside>
+            <div
+              className="image-container"
+              style={{ backgroundImage: `url+${Rick}` }}
+            >
+              <aside
+                className="color-display"
+                style={{
+                  backgroundColor: `hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%, ${this.state.a}%)`,
+                }}
+              ></aside>
+            </div>
             <h5>{`hsl(${this.state.h}, ${this.state.s}%, ${this.state.l}%,${this.state.a}%)`}</h5>
           </article>
           <form>
